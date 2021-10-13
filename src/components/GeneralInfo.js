@@ -6,7 +6,7 @@ class GeneralInfo extends Component {
 	// }
 	render() {
 		return (
-			<div>
+			<div className="container">
 				<h3>General Info</h3>
 				<label htmlFor="name">Name: </label>
 				<input
@@ -15,6 +15,7 @@ class GeneralInfo extends Component {
 					type="text"
 					name="name"
 					value={this.props.name}
+					placeholder="Your Name"
 				/>
 				<br />
 				<label htmlFor="email">Email ID: </label>
@@ -24,6 +25,7 @@ class GeneralInfo extends Component {
 					type="text"
 					name="email"
 					value={this.props.email}
+					placeholder="Email Id"
 				/>
 				<br />
 				<label htmlFor="phoneNumber">Contact Number: </label>
@@ -33,6 +35,7 @@ class GeneralInfo extends Component {
 					type="text"
 					name="phoneNumber"
 					value={this.props.phoneNumber}
+					placeholder="Contact Number"
 				/>
 			</div>
 		);

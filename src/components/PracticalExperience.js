@@ -16,6 +16,7 @@ class PracticalExperience extends Component {
 					type="text"
 					name="companyName"
 					value={this.props.companyName}
+					placeholder="Company Name"
 				/>
 				<br />
 				<label htmlFor="position">Position: </label>
@@ -25,15 +26,17 @@ class PracticalExperience extends Component {
 					type="text"
 					name="position"
 					value={this.props.position}
+					placeholder="Position"
 				/>
 				<br />
-				<label htmlFor="yourJob">Job Type: </label>
+				<label htmlFor="yourJob">Your Job: </label>
 				<input
 					onChange={this.props.handleChange}
 					id="yourJob"
 					type="text"
 					name="yourJob"
 					value={this.props.yourJob}
+					placeholder="Tell something about your job..."
 				/>
 				<br />
 				<label htmlFor="yearWork">Year Of Work: </label>
@@ -43,6 +46,7 @@ class PracticalExperience extends Component {
 					type="text"
 					name="yearWork"
 					value={this.props.yearWork}
+					placeholder="(Example:-2005-2008)"
 				/>
 			</div>
 		);

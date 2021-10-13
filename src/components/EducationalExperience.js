@@ -12,6 +12,7 @@ class EduExperience extends Component {
 					type="text"
 					name="schoolName"
 					value={this.props.schoolName}
+					placeholder="Institution"
 				/>
 				<br />
 				<label htmlFor="faculty">Faculty: </label>
@@ -21,6 +22,7 @@ class EduExperience extends Component {
 					type="text"
 					name="faculty"
 					value={this.props.faculty}
+					placeholder="Faculty"
 				/>
 				<br />
 				<label htmlFor="yearEdu">Year From: </label>
@@ -30,6 +32,7 @@ class EduExperience extends Component {
 					type="text"
 					name="yearEdu"
 					value={this.props.yearEdu}
+					placeholder="(Example:-2000-2003)"
 				/>
 			</div>
 		);
