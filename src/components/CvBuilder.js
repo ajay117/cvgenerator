@@ -6,8 +6,8 @@ class CvBuilder extends Component {
 	// }
 	render() {
 		return (
-			<div className="container">
-				<h2>General Info</h2>
+			<div className="container-cv">
+				<h3>General Info</h3>
 				<p>
 					<span>Name:</span> {this.props.name}
 				</p>
@@ -19,7 +19,7 @@ class CvBuilder extends Component {
 					<span>Contact Number: </span>
 					{this.props.phoneNumber}
 				</p>
-				<h2>Education</h2>
+				<h3>Education</h3>
 				<p>
 					<span>Institution: </span>
 					{this.props.schoolName}
@@ -45,8 +45,13 @@ class CvBuilder extends Component {
 					<span>Job Type: </span>
 					{this.props.yourJob}
 				</p>
-				<p>Year: {this.props.yearWork}</p>
-				<button onClick={this.props.edit}>Edit</button>
+				<p>
+					<span>Job Type: </span>
+					{this.props.yearWork}
+				</p>
+				<div className="container-button">
+					<button onClick={this.props.edit}>Edit</button>
+				</div>
 			</div>
 		);
 	}

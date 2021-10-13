@@ -10,9 +10,16 @@ form {
 	border: 1px solid black;
 	height: 100%;
 }
-label {
+label,
+span {
 	display: block;
 	margin-left: 5px;
+}
+label {
+	text-align: center;
+}
+p {
+	text-align: center;
 }
 label,
 span,
@@ -26,7 +33,7 @@ input {
 span {
 	font-weight: 600;
 }
-.container-submit {
+.container-button {
 	text-align: center;
 	margin-top: 20px;
 }
@@ -47,6 +54,9 @@ button {
 	span {
 		display: inline-block;
 		width: 150px;
+	}
+	p {
+		text-align: left;
 	}
 }
 
@@ -73,6 +83,9 @@ button {
 	}
 }
 @media screen and (min-width: 600px) {
+	span {
+		width: 30%;
+	}
 	button {
 		width: 480px;
 	}
@@ -83,8 +96,7 @@ button {
 		margin: 0 auto;
 		border: none;
 	}
-	label,
-	span {
+	label {
 		width: 250px;
 	}
 	input {
@@ -93,12 +105,15 @@ button {
 	button {
 		width: 550px;
 	}
+	span {
+		width: 40%;
+	}
 }
 @media screen and (min-width: 1000px) {
 	form {
 		text-align: center;
 	}
-	.container-submit {
+	.container-button {
 		margin-left: 80px;
 	}
 }

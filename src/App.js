@@ -46,7 +46,7 @@ class App extends Component {
 						yearWork={this.state.yearWork}
 						handleChange={this.handleChange}
 					/>
-					<div className="container-submit">
+					<div className="container-button">
 						<button onClick={this.submit} type="submit">
 							Submit
 						</button>
