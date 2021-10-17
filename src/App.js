@@ -1,94 +1,102 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import GeneralInfo from "./components/GeneralInfo";
 import EduExperience from "./components/EducationalExperience";
 import PracticalExperience from "./components/PracticalExperience";
 import CvBuilder from "./components/CvBuilder";
 // import "./styles/styles.css";
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			cvBuilder: true,
-			name: "",
-			email: "",
-			phoneNumber: "",
-			schoolName: "",
-			faculty: "",
-			yearEdu: "",
-			companyName: "",
-			position: "",
-			yourJob: "",
-			yearWork: "",
-		};
-	}
+const App = () => {
+	const [cvBuilder, setCvBuilder] = useState(true);
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phoneNumber, setPhoneNumber] = useState("");
+	const [schoolName, setSchoolName] = useState("");
+	const [faculty, setFaculty] = useState("");
+	const [yearEdu, setYearEdu] = useState("");
+	const [companyName, setCompanyName] = useState("");
+	const [position, setPosition] = useState("");
+	const [yourJob, setYourJob] = useState("");
+	const [yearWork, setYearWork] = useState("");
 
-	render() {
-		if (this.state.cvBuilder) {
-			return (
-				<form className="container">
-					<GeneralInfo
-						name={this.state.name}
-						email={this.state.email}
-						phoneNumber={this.state.phoneNumber}
-						handleChange={this.handleChange}
-					/>
-					<EduExperience
-						schoolName={this.state.schoolName}
-						faculty={this.state.faculty}
-						yearEdu={this.state.yearEdu}
-						handleChange={this.handleChange}
-					/>
-					<PracticalExperience
-						companyName={this.state.companyName}
-						position={this.state.position}
-						yourJob={this.state.yourJob}
-						yearWork={this.state.yearWork}
-						handleChange={this.handleChange}
-					/>
-					<div className="container-button">
-						<button onClick={this.submit} type="submit">
-							Submit
-						</button>
-					</div>
-				</form>
-			);
-		} else {
-			return (
-				<CvBuilder
-					name={this.state.name}
-					email={this.state.email}
-					phoneNumber={this.state.phoneNumber}
-					schoolName={this.state.schoolName}
-					faculty={this.state.faculty}
-					yearEdu={this.state.yearEdu}
-					companyName={this.state.companyName}
-					position={this.state.position}
-					yourJob={this.state.yourJob}
-					yearWork={this.state.yearWork}
-					edit={this.edit}
-				/>
-			);
+	const handleChange = (event) => {
+		if (event.target.name === "name") {
+			setName(event.target.value);
+		} else if (event.target.name === "email") {
+			setEmail(event.target.value);
+		} else if (event.target.name === "phoneNumber") {
+			setPhoneNumber(event.target.value);
+		} else if (event.target.name === "schoolName") {
+			setSchoolName(event.target.value);
+		} else if (event.target.name === "faculty") {
+			setFaculty(event.target.value);
+		} else if (event.target.name === "yearEdu") {
+			setYearEdu(event.target.value);
+		} else if (event.target.name === "companyName") {
+			setCompanyName(event.target.value);
+		} else if (event.target.name === "position") {
+			setPosition(event.target.value);
+		} else if (event.target.name === "yourJob") {
+			setYourJob(event.target.value);
+		} else if (event.target.name === "yearWork") {
+			setYearWork(event.target.value);
 		}
-	}
-
-	handleChange = (event) => {
-		this.setState((state) => ({
-			[event.target.name]: event.target.value,
-		}));
 	};
 
-	submit = (event) => {
+	const submit = (event) => {
 		event.preventDefault();
-		this.setState((state) => ({
-			cvBuilder: !state.cvBuilder,
-		}));
+		setCvBuilder(!cvBuilder);
 	};
-	edit = (event) => {
-		this.setState((state) => ({
-			cvBuilder: !state.cvBuilder,
-		}));
+
+	const edit = (event) => {
+		setCvBuilder(!cvBuilder);
 	};
-}
+
+	if (cvBuilder) {
+		return (
+			<form className="container">
+				<GeneralInfo
+					name={name}
+					email={email}
+					phoneNumber={phoneNumber}
+					handleChange={handleChange}
+				/>
+				<EduExperience
+					schoolName={schoolName}
+					faculty={faculty}
+					yearEdu={yearEdu}
+					handleChange={handleChange}
+				/>
+				<PracticalExperience
+					companyName={companyName}
+					position={position}
+					yourJob={yourJob}
+					yearWork={yearWork}
+					handleChange={handleChange}
+				/>
+				<div className="container-button">
+					<button onClick={submit} type="submit">
+						Submit
+					</button>
+				</div>
+			</form>
+		);
+	} else {
+		return (
+			<CvBuilder
+				name={name}
+				email={email}
+				phoneNumber={phoneNumber}
+				schoolName={schoolName}
+				faculty={faculty}
+				yearEdu={yearEdu}
+				companyName={companyName}
+				position={position}
+				yourJob={yourJob}
+				yearWork={yearWork}
+				edit={edit}
+			/>
+		);
+	}
+};
 
 export default App;
